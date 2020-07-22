@@ -1154,7 +1154,7 @@ class AuthnResponse(StatusResponse):
 
         correct = 0
         for subject_conf in subject_confirmation:
-            logger.warn(subject_conf)
+            logger.info("haha: %s",subject_conf.subject_confirmation_data)
             if subject_conf.subject_confirmation_data is None:
                 correct += 1  # In reality undefined
             elif subject_conf.subject_confirmation_data.address:
