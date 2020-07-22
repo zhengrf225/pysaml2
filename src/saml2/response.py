@@ -1153,7 +1153,7 @@ class AuthnResponse(StatusResponse):
             address = '0.0.0.0'
 
         correct = 0
-        logger.info("haha: %s", subject_confirmation)
+        logger.error("haha: %s", subject_confirmation)
         for subject_conf in subject_confirmation:
             if subject_conf.subject_confirmation_data is None:
                 correct += 1  # In reality undefined
