@@ -684,8 +684,8 @@ class AuthnResponse(StatusResponse):
     def _bearer_confirmed(self, data):
         if not data:
             return False
-
         if data.address:
+            logger.info("_bearer_confirmed %s", data.address)
             if not valid_address(data.address):
                 return False
                 # verify that I got it from the correct sender

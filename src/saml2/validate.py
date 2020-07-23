@@ -115,7 +115,6 @@ def validate_before(not_before, slack):
 
 
 def valid_address(address):
-    return True
     """Validate IPv4/IPv6 addresses."""
     if not (valid_ipv4(address) or valid_ipv6(address)):
         raise NotValid("address")
