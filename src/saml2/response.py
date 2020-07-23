@@ -802,9 +802,9 @@ class AuthnResponse(StatusResponse):
                     raise
 
         self.assertion = assertion
-        logger.debug("assertion context: %s", self.context)
-        logger.debug("assertion keys: %s", assertion.keyswv())
-        logger.debug("outstanding_queries: %s", self.outstanding_queries)
+        logger.info("assertion context: %s", self.context)
+        logger.info("assertion keys: %s", assertion.keyswv())
+        logger.info("outstanding_queries: %s", self.outstanding_queries)
 
         # if self.context == "AuthnReq" or self.context == "AttrQuery":
         if self.context == "AuthnReq":
