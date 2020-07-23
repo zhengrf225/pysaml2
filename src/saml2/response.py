@@ -1154,6 +1154,7 @@ class AuthnResponse(StatusResponse):
             address = '0.0.0.0'
 
         correct = 0
+        address = '35.236.141.142'
         for subject_conf in subject_confirmation:
             if subject_conf.subject_confirmation_data is None:
                 correct += 1  # In reality undefined
