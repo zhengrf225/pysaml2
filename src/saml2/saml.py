@@ -973,6 +973,7 @@ class SubjectLocality(SubjectLocalityType_):
     def verify(self):
         if self.address:
             logger.exception("2kc8x5q89g: %s", self.address)
+            raise
             # dotted-decimal IPv4 or RFC3513 IPv6 address
             if valid_ipv4(self.address) or valid_ipv6(self.address):
                 pass
