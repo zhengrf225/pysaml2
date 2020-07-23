@@ -465,8 +465,8 @@ class SAML2Plugin(object):
         uri = environ.get("REQUEST_URI", construct_url(environ))
         query = parse_dict_querystring(environ)
 
-        logger.info("[sp.identify] uri: %s", uri)
-        logger.info("[sp.identify] query: %s", query)
+        logger.debug("[sp.identify] uri: %s", uri)
+        logger.debug("[sp.identify] query: %s", query)
 
         is_request = "SAMLRequest" in query
         is_response = "SAMLResponse" in query
