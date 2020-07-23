@@ -123,6 +123,7 @@ class AttributeValueBase(SamlBase):
             assert self.extension_attributes[XSI_NIL] == "true"
             return True
         else:
+            logger.info("eptavhv4cj 2")
             SamlBase.verify(self)
 
     def set_type(self, typ):
@@ -972,7 +973,6 @@ class SubjectLocality(SubjectLocalityType_):
 
     def verify(self):
         if self.address:
-            logger.info("2kc8x5q89g: %s", self.address, exc_info=True)
             # dotted-decimal IPv4 or RFC3513 IPv6 address
             if valid_ipv4(self.address) or valid_ipv6(self.address):
                 pass
@@ -981,6 +981,7 @@ class SubjectLocality(SubjectLocalityType_):
         elif self.dns_name:
             valid_domain_name(self.dns_name)
 
+        logger.info("eptavhv4cj 5")
         return SubjectLocalityType_.verify(self)
 
 
@@ -1039,6 +1040,7 @@ class AuthnContextType_(SamlBase):
         elif self.authn_context_decl_ref:
             assert self.authn_context_decl is None
 
+        logger.info("eptavhv4cj 3")
         return SamlBase.verify(self)
 
 
@@ -1272,6 +1274,7 @@ class ConditionsType_(SamlBase):
         if self.proxy_restriction:
             assert len(self.proxy_restriction) == 1
 
+        logger.info("eptavhv4cj 4")
         return SamlBase.verify(self)
 
 
@@ -1675,7 +1678,7 @@ class AssertionType_(SamlBase):
         if self.authn_statement and not self.subject:
             raise MustValueError(
                 "An assertion with an AuthnStatement must contain a Subject")
-
+        logger.info("eptavhv4cj 1")
         return SamlBase.verify(self)
 
 
