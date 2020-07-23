@@ -134,6 +134,7 @@ def handle_ecp_authn_response(cls, soap_message, outstanding=None):
                               allow_unsolicited=True)
 
     response.loads("%s" % rdict["body"], False, soap_message)
+    logger.info("eptavhv4cj 13")
     response.verify()
     cls.users.add_information_about_person(response.session_info())
 
