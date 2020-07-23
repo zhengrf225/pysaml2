@@ -445,7 +445,6 @@ class SAML2Plugin(object):
         return session_info
 
     def do_ecp_response(self, body, environ):
-        logger.info("eptavhv4cj 14")
         response, _relay_state = ecp.handle_ecp_authn_response(self.saml_client, body)
 
         environ["s2repoze.relay_state"] = _relay_state.text
@@ -466,8 +465,8 @@ class SAML2Plugin(object):
         uri = environ.get("REQUEST_URI", construct_url(environ))
         query = parse_dict_querystring(environ)
 
-        logger.debug("[sp.identify] uri: %s", uri)
-        logger.debug("[sp.identify] query: %s", query)
+        logger.info("[sp.identify] uri: %s", uri)
+        logger.info("[sp.identify] query: %s", query)
 
         is_request = "SAMLRequest" in query
         is_response = "SAMLResponse" in query
