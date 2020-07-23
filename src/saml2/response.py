@@ -1159,7 +1159,7 @@ class AuthnResponse(StatusResponse):
             if subject_conf.subject_confirmation_data is None:
                 correct += 1  # In reality undefined
             elif subject_conf.subject_confirmation_data.address:
-                logger.info("p92pt2hhr7 %s", subject_conf.subject_confirmation_data.address)
+                logger.info("p92pt2hhr7 %s", subject_conf.subject_confirmation_data)
                 if address == '0.0.0.0':  # accept anything
                     correct += 1
                 elif subject_conf.subject_confirmation_data.address == address:
