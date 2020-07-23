@@ -689,7 +689,7 @@ class Base(Entity):
 
         if not xmlstr:
             return None
-        logger.info("4x9982td6s conv_info",conv_info)
+        logger.info("4x9982td6s conv_info:%s", conv_info)
         kwargs = {
             "outstanding_queries": outstanding,
             "outstanding_certs": outstanding_certs,
