@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 from __future__ import print_function
-
 import argparse
 try:
     import html
 except:
     import cgi as html
+
+import sys
+sys.path.append("/root/pysaml2/src/")
 import importlib
 import logging
 import os
