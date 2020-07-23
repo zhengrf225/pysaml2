@@ -973,7 +973,8 @@ class SubjectLocality(SubjectLocalityType_):
             if valid_ipv4(self.address) or valid_ipv6(self.address):
                 pass
             else:
-                raise ShouldValueError("Not an IPv4 or IPv6 address")
+                pass
+                # raise ShouldValueError("Not an IPv4 or IPv6 address")
         elif self.dns_name:
             valid_domain_name(self.dns_name)
 
