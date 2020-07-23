@@ -123,7 +123,7 @@ class AttributeValueBase(SamlBase):
             assert self.extension_attributes[XSI_NIL] == "true"
             return True
         else:
-            logger.info("eptavhv4cj 2")
+            logger.info("eptavhv4cj 10")
             SamlBase.verify(self)
 
     def set_type(self, typ):
@@ -981,7 +981,7 @@ class SubjectLocality(SubjectLocalityType_):
         elif self.dns_name:
             valid_domain_name(self.dns_name)
 
-        logger.info("eptavhv4cj 5")
+        logger.info("eptavhv4cj 12")
         return SubjectLocalityType_.verify(self)
 
 
@@ -1040,7 +1040,7 @@ class AuthnContextType_(SamlBase):
         elif self.authn_context_decl_ref:
             assert self.authn_context_decl is None
 
-        logger.info("eptavhv4cj 3")
+        logger.info("eptavhv4cj 11")
         return SamlBase.verify(self)
 
 
