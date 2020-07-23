@@ -16,6 +16,9 @@ from saml2 import SamlBase
 import six
 from saml2 import xmldsig as ds
 from saml2 import xmlenc as xenc
+import logging
+
+logger = logging.getLogger(__name__)
 
 NAMESPACE = 'urn:oasis:names:tc:SAML:2.0:assertion'
 
@@ -969,12 +972,12 @@ class SubjectLocality(SubjectLocalityType_):
 
     def verify(self):
         if self.address:
+            logger.info("verify",self.address)
             # dotted-decimal IPv4 or RFC3513 IPv6 address
             if valid_ipv4(self.address) or valid_ipv6(self.address):
                 pass
             else:
-                pass
-                # raise ShouldValueError("Not an IPv4 or IPv6 address")
+                raise ShouldValueError("Not an IPv4 or IPv6 address")
         elif self.dns_name:
             valid_domain_name(self.dns_name)
 
