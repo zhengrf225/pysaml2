@@ -735,6 +735,7 @@ class AuthnResponse(StatusResponse):
         """
         assert self.assertion.subject
         subject = self.assertion.subject
+        logger.info("4x9982td6s get_subject %s", subject)
         subjconf = []
 
         if not self.verify_attesting_entity(subject.subject_confirmation):
@@ -1153,7 +1154,6 @@ class AuthnResponse(StatusResponse):
             address = '0.0.0.0'
 
         correct = 0
-        logger.info("4x9982td6s subject_confirmation_data %s", subject_confirmation)
         for subject_conf in subject_confirmation:
             if subject_conf.subject_confirmation_data is None:
                 correct += 1  # In reality undefined
